@@ -21,7 +21,5 @@ class HDLCD {
 		const uint8_t width;
 		const uint8_t height;
 		bool* framebuffer;
-
-		HDLCD::init(const uint8_t, const uint8_t, const uint8_t, const uint8_t);
 };
 
