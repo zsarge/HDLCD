@@ -11,12 +11,14 @@
 
 class HDLCD {
 	public:
-		HDLCD::HDLCD(const uint8_t, const uint8_t); 
+		HDLCD::HDLCD(const uint8_t, const uint8_t);
 		~HDLCD();
 
 		const uint8_t getWidth();
 		const uint8_t getHeight();
 
+		void HDLCD::set(uint8_t, uint8_t, bool);
+		bool HDLCD::get(uint8_t, uint8_t) const;
 	private:
 		const uint8_t width;
 		const uint8_t height;
