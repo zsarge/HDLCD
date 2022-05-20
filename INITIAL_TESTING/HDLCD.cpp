@@ -1,10 +1,20 @@
 #include "HDLCD.h"
 
-HDLCD::HDLCD(int w) {
-	x = w;
+HDLCD::HDLCD(const uint8_t num_cols, const uint8_t num_rows) 
+	: height(num_rows * CHAR_HEIGHT), width(num_cols * CHAR_WIDTH)
+{
+	framebuffer = new bool[height * width];
 }
 
-int HDLCD::getX() {
-	return x;
+HDLCD::~HDLCD() {
+	delete[] framebuffer;
+}
+
+const uint8_t HDLCD::getWidth() {
+	return width;
+}
+
+const uint8_t HDLCD::getHeight() {
+	return height;
 }
 
